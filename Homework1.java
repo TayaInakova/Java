@@ -1,10 +1,13 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Homework1 {
     public static void main(String[] args) {
-        task1();
-        task2();
-        task3();
+        // task1();
+        // task2();
+        // task3();
+        task4();
     }
 
     public static void task1() { // Вычислить n-ое треугольного число(сумма чисел от 1 до n), n! (произведение
@@ -64,5 +67,41 @@ public class Homework1 {
                 break;
         }
         System.out.println("Результат: " + res);
+    }
+
+// *+Задано уравнение вида q + w = e, q, w, e >= 0. Некоторые цифры могут быть заменены знаком вопроса,
+// например 2? + ?5 = 69. Требуется восстановить выражение до верного равенства. Предложить хотя бы одно
+// решение или сообщить, что его нет.
+
+    public static void task4() {
+        String expression = "2? + ?5 = 69";
+        String[] term = expression.split(" ");
+        String term1 = term[0];
+
+        String term2 = term[2];
+        String result0 = term[4];
+        int result = Integer.parseInt(result0);
+
+        List<Integer> result1 = new ArrayList<>();
+        List<Integer> result2 = new ArrayList<>();
+        boolean hasDecision = false;
+
+        for (Integer i = 0; i < 10; i++) {
+            for (Integer j = 0; j < 10; j++) {
+                String t1 = term1.replaceAll("\\?", i.toString());
+                String t2 = term2.replaceAll("\\?", j.toString());
+                int i1 = Integer.parseInt(t1) +
+                        Integer.parseInt(t2);
+                if (i1 == result) {
+                    hasDecision = true;
+                    result1.add(i);
+                    result2.add(j);
+                    System.out.printf("%s + %s = %d\n", t1, t2, result);
+                }
+            }
+        }
+        if (!hasDecision) {
+            System.out.println("Решений нет");
+        }
     }
 }
