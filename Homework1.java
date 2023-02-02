@@ -29,12 +29,11 @@ public class Homework1 {
         for (int i = 1; i < n; i++) {
             int k = 0;
             for (int j = 1; j <= i; j++) {
-                    if (i % j == 0) {
-                        k++;
-                    }
+                if (i % j == 0) {
+                    k++;
+                }
             }
             if (k == 2) {
-                
                 System.out.println(i);
             }
         }
@@ -42,17 +41,17 @@ public class Homework1 {
 
     public static void task3() { // Реализовать простой калькулятор
         Scanner iScanner = new Scanner(System.in);
-         System.out.printf("Введите первое число: ");
-         String f = iScanner.nextLine();
-         Integer first = Integer.parseInt (f);
-         System.out.printf("Введите второе число: ");
-         String s = iScanner.nextLine();
-         Integer second = Integer.parseInt (s);
-         System.out.printf("Введите знак операции: ");
-         String n = iScanner.nextLine();
-         iScanner.close();
+        System.out.printf("Введите первое число: ");
+        String f = iScanner.nextLine();
+        Integer first = Integer.parseInt(f);
+        System.out.printf("Введите второе число: ");
+        String s = iScanner.nextLine();
+        Integer second = Integer.parseInt(s);
+        System.out.printf("Введите знак операции: ");
+        String n = iScanner.nextLine();
+        iScanner.close();
         int res = 0;
-        switch(n) {
+        switch (n) {
             case "+":
                 res = first + second;
                 break;
@@ -63,15 +62,23 @@ public class Homework1 {
                 res = first * second;
                 break;
             case "/":
-                res = first / second;
+                if (second == 0) {
+                    System.out.println("На ноль делить нельзя!");
+                } else {
+                    res = first / second;
+                }
                 break;
+            default:
+                System.out.println("Неверный ввод!");
         }
         System.out.println("Результат: " + res);
     }
 
-// *+Задано уравнение вида q + w = e, q, w, e >= 0. Некоторые цифры могут быть заменены знаком вопроса,
-// например 2? + ?5 = 69. Требуется восстановить выражение до верного равенства. Предложить хотя бы одно
-// решение или сообщить, что его нет.
+    // *+Задано уравнение вида q + w = e, q, w, e >= 0. Некоторые цифры могут быть
+    // заменены знаком вопроса,
+    // например 2? + ?5 = 69. Требуется восстановить выражение до верного равенства.
+    // Предложить хотя бы одно
+    // решение или сообщить, что его нет.
 
     public static void task4() {
         String expression = "2? + ?5 = 69";
