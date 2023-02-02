@@ -62,7 +62,7 @@ public class Homework1 {
                 res = first * second;
                 break;
             case "/":
-                if (second == 0) {
+                if (second == 0){
                     System.out.println("На ноль делить нельзя!");
                 } else {
                     res = first / second;
