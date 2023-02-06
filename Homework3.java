@@ -10,22 +10,20 @@ public class Homework3 {
 
     public static void main(String[] args) {
 
-        int[] initialArray = {5, 1, 6, 2, 3, 4};
+        int[] initialArray = {5, 1, 6, 2, 3, 4, 10, 7, 8, 9};
         mergeSorting(initialArray, initialArray.length);
         printArray(initialArray);
 
-        ArrayList<Integer> randomList = new ArrayList<>();
-        addToList(randomList);
+        List<Integer> randomList;
+        randomList = Arrays.asList(5, 1, 6, 2, 3, 4, 10, 7, 8, 9);
         removeEvenNumbers(randomList);
         printList(randomList);
 
-        ArrayList<Integer> randomList01 = new ArrayList<>();
-        addToList(randomList01);
+        List<Integer> randomList01 = Arrays.asList(5, 1, 6, 2, 3, 4, 10, 9);
         int arrayMean = arithmeticMean(randomList01);
         System.out.println("Максимум: " + Collections.max(randomList01));
         System.out.println("Минимум: " + Collections.min(randomList01));
-        System.out.println("Средне арифметическое: " + arrayMean);
-
+        System.out.println("Среднее арифметическое: " + arrayMean);
 
     }
 
@@ -90,17 +88,8 @@ public class Homework3 {
 
     }
 
-    // Добавление элементов в список
-    public static ArrayList<Integer> addToList(ArrayList<Integer> num) {
-
-        for (int i = 0; i < 10; i++) {
-            num.add(i);
-        }
-        return num;
-    }
-
     // Печать списка в консоль
-    public static void printList(ArrayList<Integer> n) {
+    public static void printList(List<Integer> n) {
 
         for (int i : n) {
             System.out.print(i + " ");
@@ -110,18 +99,18 @@ public class Homework3 {
     }
 
     // удаление чётных элементов списка
-    public static void removeEvenNumbers(ArrayList<Integer> numbers) {
+    public static void removeEvenNumbers(List<Integer> numbers) {
 
-        for (int i = 0; i < numbers.size(); i++) {
-            if ((numbers.get(i) % 2) == 0) {
-                numbers.remove(numbers.get(i));
+        for (Integer number : numbers) {
+            if ((number % 2) == 0) {
+                numbers.remove(number);
             }
         }
 
     }
 
     // Среднее арифметическое элементов списка
-    public static int arithmeticMean(ArrayList<Integer> numbers) {
+    public static int arithmeticMean(List<Integer> numbers) {
 
         int a = 0;
         for (int i : numbers) {
