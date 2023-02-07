@@ -17,13 +17,16 @@ public class Homework4 {
         List<String> test = flipTheList(example);
         printStringList(example);
         printStringList(test);
-    }
 
+
+    }
+    
+// Переворачвает список
     public static List<String> flipTheList(List<String> something) {
 
         List<String> newList = new LinkedList<>();
-        for (int i = (something.size() - 1); i >= 0; i--) {
-            newList.add(something.get(i));
+        for (String i : something) {
+            newList.add(0, i);
         }
         return newList;
     }

@@ -4,7 +4,9 @@
 */
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Collections;
+import java.util.Arrays;
 
 public class Homework3 {
 
@@ -14,8 +16,8 @@ public class Homework3 {
         mergeSorting(initialArray, initialArray.length);
         printArray(initialArray);
 
-        List<Integer> randomList;
-        randomList = Arrays.asList(5, 1, 6, 2, 3, 4, 10, 7, 8, 9);
+        List<Integer> randomList = new ArrayList<>();
+        fillList(randomList, 10);
         removeEvenNumbers(randomList);
         printList(randomList);
 
@@ -88,6 +90,15 @@ public class Homework3 {
 
     }
 
+    // Наполнение списка
+    public static void fillList(List<Integer> num, int a) {
+
+        for (int i = 1; i <= a; i++) {
+            num.add(i);
+        }
+
+    }
+
     // Печать списка в консоль
     public static void printList(List<Integer> n) {
 
@@ -101,9 +112,9 @@ public class Homework3 {
     // удаление чётных элементов списка
     public static void removeEvenNumbers(List<Integer> numbers) {
 
-        for (Integer number : numbers) {
-            if ((number % 2) == 0) {
-                numbers.remove(number);
+        for (int i = 0; i < numbers.size(); i++) {
+            if ((numbers.get(i) % 2) == 0) {
+                numbers.remove(i);
             }
         }
 
