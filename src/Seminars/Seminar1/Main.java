@@ -1,6 +1,6 @@
-package Study.Seminars.Sem1;
+package Seminars.Seminar1;
 
-import Study.Seminars.Sem1.Task.*;
+import Seminars.Seminar1.Task.*;
 public class Main {
     public static void main(String[] args) {
 
