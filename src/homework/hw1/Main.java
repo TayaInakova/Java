@@ -1,6 +1,6 @@
-package Homework.HW1;
+package homework.hw1;
 
-import Homework.HW1.Tasks.*;
+import homework.hw1.tasks.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,6 +14,6 @@ public class Main {
         PrimeNumber.demonstrate(1, 1000);
 
 // Реализовать простой калькулятор
-        Calculate.calc();
+        Calculator.calculate();
     }
 }

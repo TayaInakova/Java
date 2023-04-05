@@ -1,10 +1,10 @@
-package Homework.HW1.Tasks;
+package homework.hw1.tasks;
 
 import java.util.Scanner;
 
 // Реализовать простой калькулятор
-public class Calculate {
-    public static void calc() {
+public class Calculator {
+    public static void calculate() {
         boolean flag = true;
         while (flag) {
             Scanner iScanner = new Scanner(System.in);

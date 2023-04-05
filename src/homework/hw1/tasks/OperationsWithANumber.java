@@ -1,4 +1,4 @@
-package Homework.HW1.Tasks;
+package homework.hw1.tasks;
 
 // Вычислить n-ое треугольное число(сумма чисел от 1 до n), n! (произведение чисел от 1 до n)
 public class OperationsWithANumber {
