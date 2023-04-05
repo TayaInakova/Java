@@ -5,6 +5,7 @@ import java.util.Scanner;
 // Реализовать простой калькулятор
 public class Calculator {
     public static void calculate() {
+
         boolean flag = true;
         while (flag) {
             Scanner iScanner = new Scanner(System.in);
