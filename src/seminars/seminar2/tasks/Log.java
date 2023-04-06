@@ -6,7 +6,7 @@ import java.util.logging.LogManager;
 
 public class Log {
     static {
-        try (FileInputStream in = new FileInputStream("Java\\src\\log.config")) { // полный путь до файла с конфигами
+        try (FileInputStream in = new FileInputStream("src\\seminars\\log.config")) { // полный путь до файла с конфигами
             LogManager.getLogManager().readConfiguration(in);
         } catch (Exception e) {
             e.printStackTrace();

@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class CreateAndWriteLine {
     public static void writeInFile() {
-        try (FileWriter in = new FileWriter("Java\\src\\seminars\\seminar2\\test.txt")) {
+        try (FileWriter in = new FileWriter("src\\seminars\\seminar2\\test.txt")) {
             in.append(createLine());
         } catch (IOException e) {
             throw new RuntimeException(e);

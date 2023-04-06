@@ -3,17 +3,21 @@ package seminars.seminar2.tasks;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class GetAndPutData {
+    private static final Logger LOG = Log.log(GetAndPutData.class.getName());
 
     public static void putFilesNameInFile(String filePath) {
-        String[] NamesArray = getFilesNameInFolder(filePath);
-        try (FileWriter in = new FileWriter("Java\\src\\seminars\\seminar2\\name.txt")) {
+        try (FileWriter in = new FileWriter("src\\seminars\\seminar2\\name.txt")) {
+            String[] NamesArray = getFilesNameInFolder(filePath);
             for (String item : NamesArray) {
-                in.append(item + "\n");
+                in.append(item).append("\n");
             }
+            System.out.println("Done!");
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            LOG.log(Level.INFO, e.getMessage());
         }
     }
 
