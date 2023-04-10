@@ -37,6 +37,7 @@ public class Calculator {
             int stop = Integer.parseInt(st);
             if (stop == 0) {
                 flag = false;
+                iScanner.close();
             }
         }
     }
