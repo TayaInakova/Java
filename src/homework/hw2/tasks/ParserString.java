@@ -1,4 +1,4 @@
-package seminars.work.tasks;
+package homework.hw2.tasks;
 
 public class ParserString {
 
@@ -7,8 +7,8 @@ public class ParserString {
         String[] arr = str.split(",");
         for (int i = 0; i < arr.length; i++) {
 
-            String[] sastr = arr[i].split(":");
-            arr[i] = sastr[1].replaceAll("\"", "").replaceAll("}", "").replaceAll("]", "");
+            String[] strArray = arr[i].split(":");
+            arr[i] = strArray[1].replaceAll("\"", "").replaceAll("}", "").replaceAll("]", "");
         }
 
         return arr;
