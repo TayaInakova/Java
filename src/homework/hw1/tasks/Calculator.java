@@ -32,10 +32,9 @@ public class Calculator {
                 }
             }
             System.out.println("Результат: " + res);
-            System.out.print("Введите любую цифру, чтобы продолжить или 0, чтобы закончить вычисления:  ");
-            String st = iScanner.next();
-            int stop = Integer.parseInt(st);
-            if (stop == 0) {
+            System.out.print("Введите любой символ, чтобы продолжить или -, чтобы закончить вычисления:  ");
+            String stopSymbol = iScanner.next();
+            if (stopSymbol.equals("-")) {
                 flag = false;
                 iScanner.close();
             }
