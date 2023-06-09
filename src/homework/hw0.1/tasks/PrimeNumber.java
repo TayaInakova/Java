@@ -1,4 +1,4 @@
-package homework.hw1.tasks;
+package homework.hw0.1.tasks;
 
 // Вывести все простые числа от 1 до 1000
 public class PrimeNumber {
