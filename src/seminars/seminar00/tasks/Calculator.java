@@ -1,4 +1,4 @@
-package homework.hw1.tasks;
+package seminars.seminar00.tasks;
 
 import java.util.Scanner;
 

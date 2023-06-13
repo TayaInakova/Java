@@ -1,11 +1,11 @@
-package homework.hw2;
+package seminars.seminar01;
 
 //import org.json.simple.JSONArray;
 //import org.json.simple.JSONObject;
 
-import static homework.hw2.tasks.BubbleSort.bubbleSorting;
-import static homework.hw2.tasks.ParserString.parsing;
-import static homework.hw2.tasks.WriteArray.*;
+import seminars.seminar01.tasks.BubbleSort;
+import seminars.seminar01.tasks.ParserString;
+import seminars.seminar01.tasks.WriteArray;
 
 //1.Реализуйте алгоритм сортировки пузырьком числового массива, результат после каждой итерации запишите в лог-файл.
 //2. Дана строка json:
@@ -21,12 +21,12 @@ public class Main {
     public static void main(String[] args) {
 //        Задача 1
         int[] array = new int[]{4, 66, 76, 3, 51, 15, 10, 5};
-        System.out.println(writeIntegerArray(bubbleSorting(array)));
+        System.out.println(WriteArray.writeIntegerArray(BubbleSort.bubbleSorting(array)));
 
 
 //        Задача 2
         String data = "[{\"фамилия\":\"Иванов\",\"оценка\":\"5\",\"предмет\":\"Математика\"}, {\"фамилия\":\"Петрова\",\"оценка\":\"4\",\"предмет\":\"Информатика\"}, {\"фамилия\":\"Краснов\",\"оценка\":\"5\",\"предмет\":\"Физика\"}]";
-        System.out.println(writeString(parsing(data)));
+        System.out.println(WriteArray.writeString(ParserString.parsing(data)));
 
 //        Или:
 //        JSONArray students = new JSONArray();

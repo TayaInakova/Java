@@ -1,9 +1,9 @@
-package homework.hw2.tasks;
+package seminars.seminar01.tasks;
 
 import seminars.seminar2.tasks.Log;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import static homework.hw2.tasks.WriteArray.writeIntegerArray;
+import static seminars.seminar01.tasks.WriteArray.writeIntegerArray;
 
 public class BubbleSort {
     private static final Logger L = Log.log(BubbleSort.class.getName());

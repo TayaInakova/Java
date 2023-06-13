@@ -1,4 +1,4 @@
-package homework.hw2.tasks;
+package seminars.seminar01.tasks;
 
 public class WriteArray {
     public static String writeString(String[] str) {

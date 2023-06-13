@@ -1,4 +1,4 @@
-package homework.hw0.1.tasks;
+package seminars.seminar00.tasks;
 
 public class RiddleWithNumbers {
     public static void findNumbers(String expression) {

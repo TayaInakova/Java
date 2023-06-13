@@ -1,4 +1,4 @@
-package homework.hw2.tasks;
+package seminars.seminar01.tasks;
 
 import java.util.logging.Logger;
 import java.io.FileInputStream;

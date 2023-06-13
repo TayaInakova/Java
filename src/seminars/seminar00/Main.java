@@ -1,6 +1,10 @@
-package homework.hw1;
+package seminars.seminar00;
 
-import homework.hw1.tasks.*;
+
+import seminars.seminar00.tasks.Calculator;
+import seminars.seminar00.tasks.OperationsWithANumber;
+import seminars.seminar00.tasks.PrimeNumber;
+import seminars.seminar00.tasks.RiddleWithNumbers;
 
 public class Main {
     public static void main(String[] args) {
