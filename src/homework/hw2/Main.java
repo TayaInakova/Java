@@ -1,5 +1,6 @@
 package homework.hw2;
 
+
 import homework.hw2.task.*;
 
 public class Main {
@@ -16,5 +17,6 @@ public class Main {
 // 3) Дан массив целых чисел. Заменить отрицательные элементы на сумму индексов двузначных элементов массива.
         int[] example3 = {1, 22, -33, 44, 5, -5, -3, 23, -7};
         ReplacingElements.printResultArray(example3);
+
     }
 }
