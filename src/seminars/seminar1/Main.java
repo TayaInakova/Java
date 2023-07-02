@@ -8,6 +8,8 @@ public class Main {
 //        Task1.start();
 //        Task2.start();
 //        Task3.start();
-        Computation.count();
+//        Computation.count();
+        System.out.println(Conversion.convert("LVIII"));
+        System.out.println(Conversion.convert("MCMXCIV"));
     }
 }
