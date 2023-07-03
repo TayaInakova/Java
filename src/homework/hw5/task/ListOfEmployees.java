@@ -1,16 +1,12 @@
 package homework.hw5.task;
 
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
+import java.util.*;
 
 public class ListOfEmployees {
     /**
      * @param s - имя сотрудника
      * @param i - сколько раз встречается
-     * @apiNote красивый вывод
      */
     private static void printSort(String s, Integer i) {
         System.out.printf("Сотрудник %s повторяется %d раз(а)\n", s, i);
@@ -22,39 +18,52 @@ public class ListOfEmployees {
      */
     public static void sort(String[] names) {
         Map<String, Integer> amountOfRepetitionsOfNames = removeNoRepetition(checkForRepetition(names));
-        List<Integer> valueList = new ArrayList<>();
-        for (Map.Entry<String, Integer> valueItem : amountOfRepetitionsOfNames.entrySet()) {
-            valueList.add(valueItem.getValue());
-        }
-        valueList = valueList.stream().sorted().toList();
+        List<Integer> repetitionList = new ArrayList<>(getValueList(amountOfRepetitionsOfNames));
         String temp = null;
-        for (int i = valueList.size() - 1; i >= 0; i--) {
+        for (int i = repetitionList.size() - 1; i >= 0 ; i--) {
             for (Map.Entry<String, Integer> ent : amountOfRepetitionsOfNames.entrySet()) {
-                if (valueList.get(i).equals(ent.getValue())) {
+                if (ent.getValue().equals(repetitionList.get(i))) {
                     printSort(ent.getKey(), ent.getValue());
                     temp = ent.getKey();
                 }
             }
-            amountOfRepetitionsOfNames.remove(temp);
+            while (amountOfRepetitionsOfNames.containsKey(temp)){
+                amountOfRepetitionsOfNames.remove(temp);
+            }
         }
     }
 
     /**
-     * @param emp - список имен сотрудников с количеством повторений
+     * @param MapOfNames - список имен, встречающихся больше одного раза
+     * @return список чисел повторений имён, отсортированный по возрастанию
+     */
+    private static List<Integer> getValueList(Map<String, Integer> MapOfNames) {
+        Set<Integer> valueSet = new HashSet<>();
+        for (Map.Entry<String, Integer> valueItem : MapOfNames.entrySet()) {
+            valueSet.add(valueItem.getValue());
+        }
+        List<Integer> valueList = new ArrayList<>(valueSet);
+        valueList = valueList.stream().sorted().toList();
+        return valueList;
+    }
+
+
+    /**
+     * @param employeesRepetition - список имен сотрудников с количеством повторений
      * @return возвращает список имен сотрудников, встречающихся больше одного раза
      */
-    private static Map<String, Integer> removeNoRepetition(Map<String, Integer> emp) {
+    private static Map<String, Integer> removeNoRepetition(Map<String, Integer> employeesRepetition) {
         List<String> noRepetitionList = new ArrayList<>();
-        for (Map.Entry<String, Integer> entries : emp.entrySet()) {
+        for (Map.Entry<String, Integer> entries : employeesRepetition.entrySet()) {
             if (entries.getValue().equals(1)) {
                 noRepetitionList.add(entries.getKey());
             }
         }
         for (String elem :
                 noRepetitionList) {
-            emp.remove(elem);
+            employeesRepetition.remove(elem);
         }
-        return emp;
+        return employeesRepetition;
     }
 
     /**
@@ -62,11 +71,11 @@ public class ListOfEmployees {
      * @return список имен сотрудников с количеством повторений
      */
     private static Map<String, Integer> checkForRepetition(String[] employees) {
-        Map<String, Integer> temp = new HashMap<>();
+        Map<String, Integer> check = new HashMap<>();
         for (String employee : employees) {
-            temp.putIfAbsent(employee, 0);
-            temp.put(employee, temp.get(employee) + 1);
+            check.putIfAbsent(employee, 0);
+            check.put(employee, check.get(employee) + 1);
         }
-        return temp;
+        return check;
     }
 }
